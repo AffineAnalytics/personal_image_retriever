@@ -84,8 +84,7 @@ Here is the structure of the project:
 ## Tools and Technologies
 * Language: Python
 * Framework: PyTorch
-* Multimodal Models: OpenAI CLIP, JINA CLIP V2
-* Facial Detection Models: MTCNN, InceptionResnet V1
+* Qualcomm AI Hub Models: OpenAI CLIP (Image and Text Encoding), MediapPipe Face (Face Recognition)
 * Vector Store: Facebook AI Similarity Search (FAISS)
 * Web Interface: Streamlit
 
