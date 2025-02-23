@@ -16,6 +16,7 @@ reference_folder = os.path.join(script_dir, "..", "dataset", "reference_images")
 # Load image paths from the dataset folder
 image_paths = load_images(image_set_folder)
 save_to_pickle(image_paths, os.path.join(assets_folder, "img_paths.pkl"))  # Save image paths for later use
+image_paths = [os.path.join(image_set_folder, path) for path in image_paths]
 
 # Process multiple models (CLIP and JINA)
 #model_choices = ["CLIP", "JINA"]
@@ -60,6 +61,7 @@ save_to_pickle(reference_embeddings, os.path.join(assets_folder, "ref_emb.pkl"))
 face_embeddings = []  # List to store face embeddings
 face_indices = []  # List to store indices for each face (image index, face index)
 for i, image_path in enumerate(image_paths):
+
     embeddings = get_face_embeddings(image_path, mediapipe_app, clip_encoder, device)  # Extract face embeddings
     if embeddings is not None:
         for face_idx, face_embedding in enumerate(embeddings):
