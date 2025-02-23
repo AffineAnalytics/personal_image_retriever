@@ -17,7 +17,8 @@ With the increasing volume of digital images, finding specific photos in large, 
 
 ## How It Works
 
-<img width="1000" alt="Screenshot 2025-02-20 at 20 32 42" src="https://github.com/user-attachments/assets/eb15b867-60b3-4486-9775-065bbb9d6af2" />
+<img width="948" alt="Screenshot 2025-02-23 at 01 36 18" src="https://github.com/user-attachments/assets/17450b55-8716-4707-b3b0-ce9c01425728" />
+
 
 1. **Preprocessing**: Images are processed to extract text descriptions and facial features.
 2. **Indexing**: Extracted information is stored in separate indexes for quick retrieval.
@@ -38,7 +39,6 @@ Here is the structure of the project:
   │ 
   ├── assets/
   │   ├── CLIP_faiss_index.index
-  │   ├── JINA_faiss_index.index
   │   ├── face_faiss_index.index
   │   ├── img_paths.pkl
   │   └── ref_emb.pkl
@@ -81,6 +81,12 @@ Here is the structure of the project:
    ```bash
    streamlit run application/app.py
    ```
+5. (Optional) If you want to test it out on your own image dataset, replace the images in the [dataset/image_collection](https://github.com/AffineAnalytics/personal_image_retriever/tree/main/dataset/image_collection) folder with your dataset and make sure you upload your own reference images (with their names as the filename) to [dataset/reference_iamges](https://github.com/AffineAnalytics/personal_image_retriever/tree/main/dataset/reference_images). Empty the [assets]([https://github.com/AffineAnalytics/personal_image_retriever/tree/31084b570d56876bc4a010035ce0757ac970c741/assets](https://github.com/AffineAnalytics/personal_image_retriever/tree/main/assets)) folder and then run the below:
+   ```bash
+   python application/store.py
+   streamlit run application/app.py
+   ```  
+
 ## Tools and Technologies
 * Language: Python
 * Framework: PyTorch
