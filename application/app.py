@@ -18,6 +18,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 # Define paths relative to the script location
 script_dir = os.path.dirname(os.path.abspath(__file__))  # Get current script directory
 assets_dir = os.path.join(script_dir, "..", "assets")  # Path to assets folder
+image_set_folder = os.path.join(script_dir, "..", "dataset", "image_collection")
 
 # Streamlit UI for model selection
 # col1, col2 = st.columns(1)
@@ -29,7 +30,9 @@ model_choice = "CLIP"
 processor, model = load_model(device, model_choice)
 
 # Load precomputed data (image paths, FAISS index, and reference embeddings)
-image_paths = load_from_pickle(os.path.join(assets_dir, 'img_paths.pkl'))
+img_paths = load_from_pickle(os.path.join(assets_dir, 'img_paths.pkl'))
+image_paths = [os.path.join(image_set_folder, os.path.basename(path)) for path in img_paths]
+
 image_faiss_index = faiss.read_index(os.path.join(assets_dir, f'{model_choice}_faiss_index.index'))
 reference_embeddings = load_from_pickle(os.path.join(assets_dir, 'ref_emb.pkl'))
 
@@ -107,7 +110,7 @@ with st.sidebar:
             """
             <div class="instagram-links">
                 <a href="https://instagram.com/affine_ai?utm_medium=copy_link" target="_blank">
-                    <img src="https://affine.ai/wp-content/uploads//2024/07/729cd9027404cf30670b882ea5e9fc5f.svg" width="50">
+                    <img src="https://i.pinimg.com/474x/e7/fc/c8/e7fcc89530a488a65f0035df69fd6a14.jpg" width="50">
                 </a>
             </div>
             """,
@@ -118,7 +121,7 @@ with st.sidebar:
             """
             <div class="twitter-links">
                 <a href="https://twitter.com/Affine_ai" target="_blank">
-                    <img src="https://affine.ai/wp-content/uploads//2024/07/765fcf6aaf81232068c684d9087ab153.svg" width="50">
+                    <img src="https://icon2.cleanpng.com/20240119/phb/transparent-x-icon-black-and-white-x-in-the-1710888893456.webp" width="50">
                 </a>
             </div>
             """,
