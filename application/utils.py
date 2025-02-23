@@ -16,10 +16,9 @@ def load_images(folder):
     Returns a list of image paths for supported formats (.jpg, .jpeg, .png, .JPG).
     """
     images = []
-    for filename in os.listdir(folder):
+    for filename in sorted(os.listdir(folder)):
         if filename.endswith(('.jpg', '.jpeg', '.png', '.JPG')):
-            image_path = os.path.join(folder, filename)
-            images.append(image_path)
+            images.append(filename)
     return images
 
 def load_model(device, model_choice):
@@ -114,8 +113,8 @@ def get_face_embeddings(img_path, mediapipe_app, clip_encoder, device):
         img = img.convert('RGB')  # Convert to RGB if not already
     embeddings = []
     batched_selected_boxes, _, _, _ = mediapipe_app.predict_landmarks_from_image(img, raw_output=True)
-    
-    if batched_selected_boxes is None:
+    print(batched_selected_boxes)
+    if batched_selected_boxes[0] is None:
         return None  # No faces detected
     else:
         for box in batched_selected_boxes[0]:
