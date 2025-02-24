@@ -73,10 +73,10 @@ Here is the structure of the project:
    ```
 2. Configure AI Hub Access:
    -  [Create a Qualcomm® ID](https://myaccount.qualcomm.com/signup), and use it to [login to Qualcomm® AI Hub](https://app.aihub.qualcomm.com/).
-   -  Configure your [API token](https://app.aihub.qualcomm.com/account/)
+   -  Configure your [API token](https://app.aihub.qualcomm.com/account/) and replace the placeholder API_TOKEN below with it
    ```bash
    pip install qai-hub
-   qai-hub configure --api_token <API_TOKEN>
+   qai-hub configure --api_token API_TOKEN
    ```
 3. Install required packages:
    ```bash
