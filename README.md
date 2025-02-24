@@ -17,7 +17,7 @@ With the increasing volume of digital images, finding specific photos in large, 
 
 ## How It Works
 
-<img width="948" alt="Screenshot 2025-02-23 at 01 36 18" src="https://github.com/user-attachments/assets/17450b55-8716-4707-b3b0-ce9c01425728" />
+<img width="1121" alt="architecture" src="https://github.com/user-attachments/assets/fbb67f0e-5bf4-4223-b536-ceb65a00808c" />
 
 
 1. **Preprocessing**: Images are processed to extract text descriptions and facial features.
