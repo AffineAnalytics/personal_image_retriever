@@ -1,5 +1,8 @@
-# SnapQuery
+# SnapQuery: Your Personalized Image Search Assistant
 
+_**Powered by Qualcomm AI Hub**_
+
+## Introduction
 With the increasing volume of digital images, finding specific photos in large, unorganized collections can be a tedious task. This project addresses this problem by aiming to create a smart and intuitive image retrieval system that allows users to find images based on text queries and facial recognition. The system leverages multimodal models, vector stores, and semantic search techniques to provide accurate and efficient image retrieval.
 
 ## Table of Contents
