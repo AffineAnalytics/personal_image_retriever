@@ -87,7 +87,7 @@ with st.sidebar:
         "Face Recognition Similarity Threshold", 
         min_value=0.0, 
         max_value=1.0, 
-        value=0.8, 
+        value=0.81, 
         step=0.01
     )
     st.markdown("<br><hr>", unsafe_allow_html=True)
