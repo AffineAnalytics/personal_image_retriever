@@ -76,7 +76,7 @@ Here is the structure of the project:
    -  Configure your [API token](https://app.aihub.qualcomm.com/account/)
    ```bash
    pip install qai-hub
-   qai-hub configure --api_token API_TOKEN
+   qai-hub configure --api_token <API_TOKEN>
    ```
 3. Install required packages:
    ```bash
