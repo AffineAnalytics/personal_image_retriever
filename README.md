@@ -59,6 +59,7 @@ Here is the structure of the project:
   │       └── utils_v1.py
   │ 
   ├── README.md
+  ├── packages.txt
   └── requirements.txt
 ```
 ## Installation and Usage
