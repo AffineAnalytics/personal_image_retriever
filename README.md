@@ -86,7 +86,7 @@ Here is the structure of the project:
    ```bash
    streamlit run application/app.py
    ```
-5. (Optional) If you want to test it out on your own image dataset, replace the images in the [dataset/image_collection](https://github.com/AffineAnalytics/personal_image_retriever/tree/main/dataset/image_collection) folder with your dataset and make sure you upload your own reference images (with their names as the filename) to [dataset/reference_images](https://github.com/AffineAnalytics/personal_image_retriever/tree/main/dataset/reference_images). Empty the [assets]([https://github.com/AffineAnalytics/personal_image_retriever/tree/31084b570d56876bc4a010035ce0757ac970c741/assets](https://github.com/AffineAnalytics/personal_image_retriever/tree/main/assets)) folder and then run the below:
+5. (Optional) If you want to test it out on your own image dataset, replace the images in the [dataset/image_collection](https://github.com/AffineAnalytics/personal_image_retriever/tree/main/dataset/image_collection) folder with your dataset and make sure you upload your own reference images (with their names as the filename) to [dataset/reference_images](https://github.com/AffineAnalytics/personal_image_retriever/tree/main/dataset/reference_images) in JPG or PNG format. Empty the [assets]([https://github.com/AffineAnalytics/personal_image_retriever/tree/31084b570d56876bc4a010035ce0757ac970c741/assets](https://github.com/AffineAnalytics/personal_image_retriever/tree/main/assets)) folder and then run the below:
    ```bash
    python application/store.py
    streamlit run application/app.py
