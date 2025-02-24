@@ -42,6 +42,7 @@ def transform_image(device, image):
     Applies transformations to an image: resizing, converting to tensor, and normalizing.
     Returns a processed image tensor.
     """
+    image = image.convert('RGB')
     transform = transforms.Compose([
         transforms.Resize((224, 224)),  # Resize to 224x224
         transforms.ToTensor(),          # Convert to tensor
@@ -113,7 +114,6 @@ def get_face_embeddings(img_path, mediapipe_app, clip_encoder, device):
         img = img.convert('RGB')  # Convert to RGB if not already
     embeddings = []
     batched_selected_boxes, _, _, _ = mediapipe_app.predict_landmarks_from_image(img, raw_output=True)
-    print(batched_selected_boxes)
     if batched_selected_boxes[0] is None:
         return None  # No faces detected
     else:
