@@ -19,7 +19,6 @@ save_to_pickle(image_paths, os.path.join(assets_folder, "img_paths.pkl"))  # Sav
 image_paths = [os.path.join(image_set_folder, path) for path in image_paths]
 
 # Process multiple models (CLIP and JINA)
-#model_choices = ["CLIP", "JINA"]
 model_choices = ["CLIP"]
 for model_choice in model_choices:
     print(f"Processing for model: {model_choice}")
@@ -29,8 +28,6 @@ for model_choice in model_choices:
     image_embeddings = []
     for i, image_path in enumerate(image_paths):
         embeddings = get_image_embedding(image_path, processor, model, device, model_choice)  # Get embeddings for each image
-        if model_choice == "JINA":
-            embeddings = embeddings[:256]  # Trim embedding size for JINA model compatibility
         image_embeddings.append(embeddings)
         if i % 10 == 0:
             print(f"Processed {i} images for {model_choice}")
@@ -61,7 +58,6 @@ save_to_pickle(reference_embeddings, os.path.join(assets_folder, "ref_emb.pkl"))
 face_embeddings = []  # List to store face embeddings
 face_indices = []  # List to store indices for each face (image index, face index)
 for i, image_path in enumerate(image_paths):
-
     embeddings = get_face_embeddings(image_path, mediapipe_app, clip_encoder, device)  # Extract face embeddings
     if embeddings is not None:
         for face_idx, face_embedding in enumerate(embeddings):
