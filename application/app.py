@@ -151,15 +151,20 @@ if query:
     clip_paths = set(clip_rank.keys())
 
     # Step 3: Face Recognition Search
+    # Check for keywords in query
     matched_keywords = [keyword for keyword in reference_embeddings if keyword.lower() in query.lower()]
+
+    # Set to true if keywords found in query
     is_fr = bool(matched_keywords)
     fr_rank = {}
-
+    
+    # If keywords found, perform face recognition
     if is_fr:
         image_scores = {}
 
         # Iterate over matched keywords and perform face recognition
         for keyword in matched_keywords:
+            # Retrieve reference embedding for current keyword
             ref_emb = reference_embeddings[keyword]
             ref_emb = torch.nn.functional.normalize(ref_emb, p=2, dim=1)
 
